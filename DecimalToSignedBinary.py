@@ -20,7 +20,3 @@ def decToBin(num, binary):
     if num >= 1: # to not exceed maximum recursion depth
         decToBin(num//2, binary)
         binary.append(str(num%2))
-
-print("Enter decimal: ")
-x = int(input("Enter decimal: "))
-print(solve(x))
