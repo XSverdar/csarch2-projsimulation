@@ -118,7 +118,7 @@ def solve(inputA, inputB):
     while b00l == 0:
         a = input("\nDo you want to output results in a text file (Y/N): ")
         if a == 'Y':
-            file = open("output.txt", "w") 
+            file = open("Booths.txt", "w") 
             x = 0
             inputB = inputB[:-1]
             file.write("    ")
