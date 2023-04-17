@@ -110,11 +110,3 @@ def solve(inputA, inputB):
             b00l += 1
         else:
             b00l == 0
-
-    
-
-
-def get():
-    inputA = input("Input:")
-    inputB = input("Input2:")
-    solve(inputA, inputB)

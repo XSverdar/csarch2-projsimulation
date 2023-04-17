@@ -149,36 +149,47 @@ def solve(num1,num2):
                 resultcopy[x][y] = ' '
                 counter2 += 1
 
-    # write text file
-    with open('extendedBooths.txt','w') as f:
-        f.write('  ')
-        f.writelines(num1)
-        f.write('\n')
-        f.write('x ')
-        #f.writelines(num2result)
-        for x in num2result:
-            if x == '1':
-                f.write('+1')
-            elif x == '2':
-                f.write('+2')
-            else:
-                f.write(x)
-        f.write('\n')
-        f.write('---------------------')
-        f.write('\n')
-        for elem in resultcopy:
-            for y in elem:
-                resultCombined += str(y)
-            f.write(resultCombined)
-            resultCombined = ''
-            f.write('  <---- Intermediate # ')
-            f.write(str(number))
-            number += 1
+    print(num1)
+    print(num2)
+    print("--------------")
+    print(resultcopy)
+    print("--------------")
+    print(combined)
+
+    textfileprompt = input("Would you like to export the solution to a text file? [Y/N]: ")
+    if textfileprompt == 'Y':
+        print("File has been exported to extendedBooths.txt")
+
+        # write text file
+        with open('extendedBooths.txt','w') as f:
+            f.write('  ')
+            f.writelines(num1)
             f.write('\n')
-        f.write('---------------------')
-        f.write('\n')
-        f.write(combined)
-        f.write('  <---- Result')
+            f.write('x ')
+            #f.writelines(num2result)
+            for x in num2result:
+                if x == '1':
+                    f.write('+1')
+                elif x == '2':
+                    f.write('+2')
+                else:
+                    f.write(x)
+            f.write('\n')
+            f.write('---------------------')
+            f.write('\n')
+            for elem in resultcopy:
+                for y in elem:
+                    resultCombined += str(y)
+                f.write(resultCombined)
+                resultCombined = ''
+                f.write('  <---- Intermediate # ')
+                f.write(str(number))
+                number += 1
+                f.write('\n')
+            f.write('---------------------')
+            f.write('\n')
+            f.write(combined)
+            f.write('  <---- Result')
 
     return combined
 
