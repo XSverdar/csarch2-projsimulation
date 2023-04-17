@@ -181,7 +181,3 @@ def solve(num1,num2):
         f.write('  <---- Result')
 
     return combined
-
-x = input()
-y = input()
-solve(x,y)
