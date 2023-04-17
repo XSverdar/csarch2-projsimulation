@@ -4,7 +4,7 @@ import booths
 import extendedBooths
 
 def main():
-    inp1 = input("Choose a method between....\n(1) Pencil and Paper\n(2) Booth's Algorithm\n(3) Extended Booth's Algorithm\n")
+    inp1 = input("\nChoose a method between....\n(1) Pencil and Paper\n(2) Booth's Algorithm\n(3) Extended Booth's Algorithm\n")
     if(inp1 == "1"):
         print("\nPencil and Paper\n")
         inp = input("Choose input type (D/B): ")
