@@ -78,8 +78,9 @@ def solve(inputA, inputB):
 
     b00l = 0
     while b00l == 0:
-        a = input("\nDo you want to output results in a text file (Y/N): ")
+        a = input("\nWould you like to export the solution to a text file? [Y/N]: ")
         if a == 'Y':
+            print("Solution has been exported to PencilAndPaper.txt")
             file = open("PencilAndPaper.txt", "w") 
             x = 0
             y = 0

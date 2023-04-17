@@ -137,8 +137,10 @@ def solve(num1,num2):
     # text file variables
     resultcopy = result.copy()
     number = 1
+    number2 = 1
     counter2 = 0
     resultCombined = ''
+    flag = 0
 
     # cut zeroes from matrix so text file will look cleaner
     for x in range(len(num2result)):
@@ -152,43 +154,50 @@ def solve(num1,num2):
     print(num1)
     print(num2)
     print("--------------")
-    print(resultcopy)
+    for x in resultcopy:
+        print(x, " <-- Intermediate # ",number2)
+        number2 += 1
     print("--------------")
-    print(combined)
+    print(finalAnswer, " <-- Final Result")
 
-    textfileprompt = input("Would you like to export the solution to a text file? [Y/N]: ")
-    if textfileprompt == 'Y':
-        print("File has been exported to extendedBooths.txt")
+    while flag == 0:
+        textfileprompt = input("\nWould you like to export the solution to a text file? [Y/N]: ")
+        if textfileprompt == 'Y':
+            print("Solution has been exported to extendedBooths.txt")
+            flag = 1
 
-        # write text file
-        with open('extendedBooths.txt','w') as f:
-            f.write('  ')
-            f.writelines(num1)
-            f.write('\n')
-            f.write('x ')
-            #f.writelines(num2result)
-            for x in num2result:
-                if x == '1':
-                    f.write('+1')
-                elif x == '2':
-                    f.write('+2')
-                else:
-                    f.write(x)
-            f.write('\n')
-            f.write('---------------------')
-            f.write('\n')
-            for elem in resultcopy:
-                for y in elem:
-                    resultCombined += str(y)
-                f.write(resultCombined)
-                resultCombined = ''
-                f.write('  <---- Intermediate # ')
-                f.write(str(number))
-                number += 1
+            # write text file
+            with open('extendedBooths.txt','w') as f:
+                f.write('  ')
+                f.writelines(num1)
                 f.write('\n')
-            f.write('---------------------')
-            f.write('\n')
-            f.write(combined)
-            f.write('  <---- Result')
+                f.write('x ')
+                #f.writelines(num2result)
+                for x in num2result:
+                    if x == '1':
+                        f.write('+1')
+                    elif x == '2':
+                        f.write('+2')
+                    else:
+                        f.write(x)
+                f.write('\n')
+                f.write('---------------------')
+                f.write('\n')
+                for elem in resultcopy:
+                    for y in elem:
+                        resultCombined += str(y)
+                    f.write(resultCombined)
+                    resultCombined = ''
+                    f.write('  <---- Intermediate # ')
+                    f.write(str(number))
+                    number += 1
+                    f.write('\n')
+                f.write('---------------------')
+                f.write('\n')
+                f.write(combined)
+                f.write('  <---- Result')
+        elif textfileprompt == 'N':
+            print("Result not transferred to text file.")
+            flag = 1
 
     return combined
